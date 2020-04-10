@@ -8,6 +8,12 @@ def index(request):
     return render(request, 'index.html')
 
 
+def notebook_view(request):
+    return render(request, 'Notebook.html')
+
+
+
+
 
 def display_notebook(request):
     items = Notebook.objects.all()
@@ -16,7 +22,7 @@ def display_notebook(request):
         'header' : "Notebooks"
 
     }
-    return render(request, 'index.html', context)
+    return render(request, 'Notebook.html', context)
 
 
 def display_computador(request):
@@ -26,7 +32,7 @@ def display_computador(request):
         'header': "Computadores"
 
     }
-    return render(request, 'index.html', context)
+    return render(request, 'Computador.html', context)
 
 
 
@@ -37,7 +43,7 @@ def display_celular(request):
         'header': "Celulares"
 
     }
-    return render(request, 'index.html', context)
+    return render(request, 'Celular.html', context)
 
 
 

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+  <br>
+<div class="button-group">
+
+
+    <a href="{% url 'add_celular' %}" class="btn btn-success btn-lg ml-5 pt-2" role="button"> Adicionar Celular </a>
+
+
+</div>
+
+
+
+     <br>
+
+  <p class="h2 ml-5" >Visualizando {{ header }} </p>
+<br>
+<table class="table table-hover ml-5">
+
+
+    <thead>
+
+        <tr>
+            <th>Cod</th>
+            <th>Modelo</th>
+            <th>Preco</th>
+            <th>Status</th>
+            <th>Problemas</th>
+        </tr>
+
+</thead>
+
+
+    <tbody>
+
+
+    {% for item in items %}
+
+
+<tr>
+
+    <td> {{ item.pk }}</td>
+    <td> {{ item.tipo }}</td>
+    <td>{{ item.preco }}</td>
+    <td>{{ item.status }}</td>
+    <td>{{ item.issues }}</td>
+{% if header|lower == "celulares" %}
+
+    <td>
+        <a href="{% url 'edit_celular' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit </a>
+        <a href="{% url 'delete_celular' item.pk %}" class="btn btn-danger btn-sm" role="button">Delete </a>
+    </td>
+
+    </td>
+{% endif %}
+
+
+
+</tr>
+
+    {% endfor %}
+
+
+    </tbody>
+
+
+</table>
+
+
+
+
+
+
+{% endblock %}

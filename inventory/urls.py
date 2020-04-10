@@ -5,6 +5,7 @@ from .views import *
 urlpatterns = [
 
     url(r'^$', index, name='index'),
+    url(r'^notebook_view$', notebook_view, name='notebook_view'),
 
     url(r'^display_notebook$', display_notebook, name ='display_notebook'),
     url(r'^display_computador$', display_computador, name ='display_computador'),
